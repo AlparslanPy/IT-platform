@@ -98,18 +98,28 @@
                      <th>Fakulteti</th>
                      <th>Grupasy</th>
                      <th>Proyecti</th>
+                     <th>Doglan senesi</th>
+                     <th>Suraty</th>
+                     <th>Okuw baslayan wagty</th>
+                     <th>Okuw gutoryan wagty</th>
                    </tr>
                    </thead>
 
                    <tbody>
-                     {% for students in student %}
+                     {% for student in students %}
                      <tr>
                     <td>{{students.name}}</td>
                     <td>{{students.sername}}</td>
                     <td>{{students.program}}</td>
                     <td>{{students.faculty}}</td>
                     <td>{{students.group}}</td>
-					          <td>{% for project in students.project.all %}{{ project }}<br/>{% endfor %}</tr>
+                    <td>{{students.year}}</td>
+                    <td>{{students.photo}}</td>
+                    <td>{{students.study_starting_time}}</td>
+                    <td>{{students.study_end_time}}</td>
+					          <td>{% for project in students.project.all %}
+                      {{ project }}<br/>
+                      {% endfor %}</tr>
                    {% endfor %}
 
 

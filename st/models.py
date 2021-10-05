@@ -11,13 +11,17 @@ class Project(models.Model):
         return self.title
 
 
-class Students(models.Model):
+class Student(models.Model):
 
     name = models.CharField(max_length=64)
     sername = models.CharField(max_length=64)
     faculty = models.CharField(max_length=64)
     group = models.CharField(max_length=64)
     program = models.CharField(max_length=64)
+    year = models.DateField()
+    photo = models.ImageField()
+    study_starting_time = models.TimeField()
+    study_end_time = models.TimeField()
     project = models.ManyToManyField(Project,null = True, blank = True, default = '-')
 
 
