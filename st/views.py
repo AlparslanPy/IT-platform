@@ -8,8 +8,10 @@ from .models import Project, Student
 # @login_required
 def index(request):
     student = Student.objects.all()
+    project = Project.objects.all()
     context = {
-        'student' : student
+        'student' : student,
+        'project' : project
     }
     return render(request, 'st/index.html', context)
 

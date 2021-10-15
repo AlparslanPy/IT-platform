@@ -97,16 +97,16 @@
                      <th>Isleyan Programasy</th>
                      <th>Fakulteti</th>
                      <th>Grupasy</th>
-                     <th>Proyecti</th>
                      <th>Doglan senesi</th>
                      <th>Suraty</th>
                      <th>Okuw baslayan wagty</th>
                      <th>Okuw gutoryan wagty</th>
+                     <th>Proyecti</th>
                    </tr>
                    </thead>
 
                    <tbody>
-                     {% for student in students %}
+                     {% for students in student %}
                      <tr>
                     <td>{{students.name}}</td>
                     <td>{{students.sername}}</td>
@@ -114,11 +114,11 @@
                     <td>{{students.faculty}}</td>
                     <td>{{students.group}}</td>
                     <td>{{students.year}}</td>
-                    <td>{{students.photo}}</td>
+                    <td><img src="{{students.photo.url}}" style="max-width:100%" alt=""></td>
                     <td>{{students.study_starting_time}}</td>
                     <td>{{students.study_end_time}}</td>
-					          <td>{% for project in students.project.all %}
-                      {{ project }}<br/>
+					          <td>{% for p in students.project_set.all %}
+                      {{ p }}<br/>
                       {% endfor %}</tr>
                    {% endfor %}
 
